@@ -32,7 +32,11 @@ export default function Login() {
   return (
     <>
       <h3>You must log in to view the page at {from.pathname}</h3>
-      <form onSubmit={handleLogin} className={styles.loginForm}>
+      <form
+        onSubmit={handleLogin}
+        onChange={handleFormChange}
+        className={styles.loginForm}
+      >
         <label for="email">Email</label>
         <input
           id="email"
