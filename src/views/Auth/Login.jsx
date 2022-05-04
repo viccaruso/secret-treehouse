@@ -28,22 +28,15 @@ export default function Login() {
     // See https://v5.reactrouter.com/web/api/history for the appropriate method to use
   };
 
+  loginWasSuccessful ? history.replace(from) : setError('Login failed');
+
   return (
     <>
       <h3>You must log in to view the page at {from.pathname}</h3>
       <form onSubmit={handleLogin} className={styles.loginForm}>
         <label>Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-        />{' '}
-        <label>Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-        />
+        <input id="email" name="email" type="email" /> <label>Password</label>
+        <input id="password" name="password" type="password" />
         <button type="submit" aria-label="Sign In">
           Sign in
         </button>
